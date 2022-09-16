@@ -1,25 +1,20 @@
+import "./App.css";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Games from "./Pages/Games";
+import Home from "./Pages/Home";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import './App.css';
-import Header from './components/Header/Header';
-import Paragraph from './components/Paragraph/Paragraph';
-import Link from './components/Link/Link';
-import Img from './components/Img/Img.js';
 function App() {
   return (
-  <div>
-    <Header></Header>
-     
-    
-    <div>
-    <Paragraph></Paragraph>
-    </div>
-    <Img></Img>
-  
-
-    
-    <Link url="https://liquipedia.net/" linktext="Click here for more info on Esports schedules"></Link><br></br>
-    
-  </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route index element={<Home />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="games" element={<Games />} />
+      <Route path="about" element={<About />} />
+      <Route path="*" element={<div>404 Not found</div>} />
+    </Routes>
   );
 }
 
